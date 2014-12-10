@@ -1,3 +1,65 @@
+.#*
+*~
+*.a
+*.A.dylib
+*.app
+*.aps
+*.bak
+[Bb]in
+*.bsc
+*.cache
+[Dd]ebug*/
+*.dll
+*.DS_Store
+*.dylib
+*.exe
+*.exp
+*.gch
+*.gz
+*_i.c
+*.ilk
+*.la
+*.lai
+*.lib
+*.lo
+*.log
+*.map
+*.ncb
+*.o
+*.obj
+obj-*
+obj/
+objects-*
+*.opt
+*.out
+*_p.c
+*.pch
+*.pdb
+*.plg
+_ReSharper*/
+[Rr]elease*/
+*.sbr
+*.sdf
+*.slo
+*.so
+*.suo
+*.tar
+Thumbs.db
+*.tlb
+*.tlh
+[Tt]est[Rr]esult*
+*.user
+*.vspscc
+*.xo
+
+# linux kernel module
+*.ko*
+*.mod.*
+*.o*
+*.symvers
+*tmp*/
+!*.org
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -26,7 +88,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
