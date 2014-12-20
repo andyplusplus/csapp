@@ -1,0 +1,5 @@
+test and try the code of <<Computer Systems - third edition>>
+
+* 177 generate assembly from binary
+	generate ATT assembly: 		gcc -Og -S hello.c
+	generate Intel assembly :	gcc -Og -s -masm=intel hello.c
