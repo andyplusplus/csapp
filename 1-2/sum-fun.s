@@ -1,4 +1,4 @@
-	.file	"very-simple-fun-49.c"
+	.file	"sum-fun.c"
 	.text
 	.globl	sum
 	.type	sum, @function
