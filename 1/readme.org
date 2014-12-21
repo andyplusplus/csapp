@@ -7,6 +7,8 @@ generate preprocessing file:
     cpp hello.c hello.i
 generate assembly code: gcc -S hello.c
 
+generate object file: gcc -c hello.c
+
 * big endian and little endian
 Linux 64; 
 big endian - most significant come first;
