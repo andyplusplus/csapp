@@ -9,14 +9,10 @@ generate assembly code: gcc -S hello.c
 
 generate object file: gcc -c hello.c
 
+* very-simple-fun-49.c
+TODO: the c code is not able generate specified code.
+
 * big endian and little endian
 Linux 64; 
 big endian - most significant come first;
 little endian - least significant first
-
-expected value: 0x3039
-
-int value:      39 30 00 00
-float value:    00 e4 40 46
-float pointer:  10 c8 6f b0 ff 7f 00 00
-
