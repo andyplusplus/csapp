@@ -1,4 +1,4 @@
-	.file	"remdiv-199.c"
+	.file	"remdiv.c"
 	.text
 	.globl	remdiv
 	.type	remdiv, @function
