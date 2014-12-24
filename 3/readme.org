@@ -1,0 +1,12 @@
+study the machine-level representation of generated code
+
+* mstore.c
+
+** to generate assembly code
+     gcc -Og -S mstore.c
+
+** to generate object code
+     gcc -Og -c mstore.c
+     hexl-find-file
+** to dissamble code
+     objdump -d mstore.o
