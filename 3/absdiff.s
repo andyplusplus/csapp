@@ -1,21 +1,8 @@
 	.file	"absdiff.c"
-	.globl	lt_cnt
-	.bss
-	.align 8
-	.type	lt_cnt, @object
-	.size	lt_cnt, 8
-lt_cnt:
-	.zero	8
-	.globl	ge_cnt
-	.align 8
-	.type	ge_cnt, @object
-	.size	ge_cnt, 8
-ge_cnt:
-	.zero	8
 	.text
-	.globl	absdiff_se
-	.type	absdiff_se, @function
-absdiff_se:
+	.globl	absdiff
+	.type	absdiff, @function
+absdiff:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -28,9 +15,6 @@ absdiff_se:
 	movq	-24(%rbp), %rax
 	cmpq	-32(%rbp), %rax
 	jge	.L2
-	movq	lt_cnt(%rip), %rax
-	addq	$1, %rax
-	movq	%rax, lt_cnt(%rip)
 	movq	-24(%rbp), %rax
 	movq	-32(%rbp), %rdx
 	subq	%rax, %rdx
@@ -38,9 +22,6 @@ absdiff_se:
 	movq	%rax, -8(%rbp)
 	jmp	.L3
 .L2:
-	movq	ge_cnt(%rip), %rax
-	addq	$1, %rax
-	movq	%rax, ge_cnt(%rip)
 	movq	-32(%rbp), %rax
 	movq	-24(%rbp), %rdx
 	subq	%rax, %rdx
@@ -53,10 +34,10 @@ absdiff_se:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	absdiff_se, .-absdiff_se
-	.globl	gotodiff_se
-	.type	gotodiff_se, @function
-gotodiff_se:
+	.size	absdiff, .-absdiff
+	.globl	cmovdiff
+	.type	cmovdiff, @function
+cmovdiff:
 .LFB1:
 	.cfi_startproc
 	pushq	%rbp
@@ -64,39 +45,34 @@ gotodiff_se:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	movq	%rdi, -24(%rbp)
-	movq	%rsi, -32(%rbp)
-	movq	-24(%rbp), %rax
-	cmpq	-32(%rbp), %rax
-	jl	.L6
-	nop
-.L7:
-	movq	ge_cnt(%rip), %rax
-	addq	$1, %rax
-	movq	%rax, ge_cnt(%rip)
-	movq	-32(%rbp), %rax
-	movq	-24(%rbp), %rdx
+	movq	%rdi, -40(%rbp)
+	movq	%rsi, -48(%rbp)
+	movq	-40(%rbp), %rax
+	movq	-48(%rbp), %rdx
 	subq	%rax, %rdx
 	movq	%rdx, %rax
+	movq	%rax, -24(%rbp)
+	movq	-48(%rbp), %rax
+	movq	-40(%rbp), %rdx
+	subq	%rax, %rdx
+	movq	%rdx, %rax
+	movq	%rax, -16(%rbp)
+	movq	-40(%rbp), %rax
+	cmpq	-48(%rbp), %rax
+	setge	%al
+	movzbl	%al, %eax
 	movq	%rax, -8(%rbp)
-	movq	-8(%rbp), %rax
-	jmp	.L8
+	cmpq	$0, -8(%rbp)
+	je	.L6
+	movq	-16(%rbp), %rax
+	movq	%rax, -24(%rbp)
 .L6:
-	movq	lt_cnt(%rip), %rax
-	addq	$1, %rax
-	movq	%rax, lt_cnt(%rip)
 	movq	-24(%rbp), %rax
-	movq	-32(%rbp), %rdx
-	subq	%rax, %rdx
-	movq	%rdx, %rax
-	movq	%rax, -8(%rbp)
-	movq	-8(%rbp), %rax
-.L8:
 	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE1:
-	.size	gotodiff_se, .-gotodiff_se
+	.size	cmovdiff, .-cmovdiff
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits
