@@ -1,18 +1,29 @@
-Try and test
+Try and test of CSAPP
 
-* modified text, assembly, relocable obj of hello world
+------------------------------------------------------------
+* ch1 tour of computer systems
+** modified text, assembly, relocable obj of hello world
 
-generate preprocessing file:
-    gcc -E hello.c > hello.i
-    cpp hello.c hello.i
-generate assembly code: gcc -S hello.c
+	generate preprocessing file:
+		gcc -E hello.c > hello.i
+		cpp hello.c hello.i
+		
+	generate assembly code: gcc -S hello.c
 
-generate object file: gcc -c hello.c
+	generate object file: gcc -c hello.c
 
-* very-simple-fun-49.c
-TODO: the c code is not able generate specified code.
+------------------------------------------------------------
+* ch2 representing and manipulating (p31)
+	Specify different versions of C to GCC(p35)
+		GNU89: -std=gnu89		ANSI, ISO C90: -ansi, std=c89
+		ISO C99: -std=c99		ISO C11: -std=c11
+	date size (p40):
+		gcc -m32 prog.c -- generate 32 bit runnable
+		gcc -m64 prog.c -- generate 64 bit runnable
 
-* big endian and little endian
-Linux 64; 
-big endian - most significant come first;
-little endian - least significant first
+** very-simple-fun-49.c
+	
+** big endian and little endian
+	Linux 64; 
+		big endian - most significant come first;
+		little endian - least significant first
