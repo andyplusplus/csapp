@@ -1,7 +1,8 @@
 Try and test of CSAPP
 
-------------------------------------------------------------
+----------------------------------------------------------------------------
 * ch1 tour of computer systems
+----------------------------------------------------------------------------
 ** modified text, assembly, relocable obj of hello world
 
 	generate preprocessing file:
@@ -12,8 +13,9 @@ Try and test of CSAPP
 
 	generate object file: gcc -c hello.c
 
-------------------------------------------------------------
+----------------------------------------------------------------------------
 * ch2 representing and manipulating (p31)
+----------------------------------------------------------------------------
 	Specify different versions of C to GCC(p35)
 		GNU89: -std=gnu89		ANSI, ISO C90: -ansi, std=c89
 		ISO C99: -std=c99		ISO C11: -std=c11
