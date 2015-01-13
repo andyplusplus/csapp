@@ -1,6 +1,6 @@
 study the machine-level representation of generated code
 
-* mstore.c
+* mstore.c  p172
 
 ** to generate assembly code
      gcc -Og -S mstore.c
@@ -10,3 +10,13 @@ study the machine-level representation of generated code
      hexl-find-file
 ** to dissamble code
      objdump -d mstore.o
+
+
+
+* exchange.c p187
+  I have listed two approach to generate assembly file:
+    1) by exchangemake-Og.sh ==> exchange-187-disamb-Og.s   
+             -O -O1: optimize,  -g: include debug info
+             -Og: Optimize debugging experience.
+    2) by exchangemake.sh ==> exchange-187-disamb.s
+    3) by gcc -s exchange.c ==> exchange-187.s
