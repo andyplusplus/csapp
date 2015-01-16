@@ -1,4 +1,4 @@
-	.file	"hello.c"
+	.file	"hello-world.c"
 	.section	.rodata
 .LC0:
 	.string	"hello, world"
